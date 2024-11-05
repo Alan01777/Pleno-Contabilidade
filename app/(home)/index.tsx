@@ -43,18 +43,18 @@ export default function Home() {
     }
 
     const services = [
-        { id: '1', icon: require('@/assets/images/icons/certidoes.png'), text: 'Certidões' },
-        { id: '2', icon: require('@/assets/images/icons/faturamentos.png'), text: 'Faturamentos' },
-        { id: '3', icon: require('@/assets/images/icons/documentacao.png'), text: 'Documentação' },
-        { id: '4', icon: require('@/assets/images/icons/contrato.png'), text: 'Contratos' },
-        { id: '5', icon: require('@/assets/images/icons/fgts.png'), text: 'FGTS' },
-        { id: '6', icon: require('@/assets/images/icons/folhas.png'), text: 'Folhas' },
-        { id: '7', icon: require('@/assets/images/icons/simples nacional.png'), text: 'Simples nacional' },
-        { id: '8', icon: require('@/assets/images/icons/icms.png'), text: 'ICMS' },
-        { id: '8', icon: require('@/assets/images/icons/pis cofins.png'), text: 'PIS/COFINS' },
-        { id: '9', icon: require('@/assets/images/icons/irpj.png'), text: 'IRPJ' },
-        { id: '10', icon: require('@/assets/images/icons/csll.png'), text: 'CSLL' },
-        { id: '11', icon: require('@/assets/images/icons/solicitacao.png'), text: 'Solicitações' },
+        { id: '1', icon: require('@/assets/images/icons/certidoes.png'), text: 'Certidões', path: '' },
+        { id: '2', icon: require('@/assets/images/icons/faturamentos.png'), text: 'Faturamentos', path: '' },
+        { id: '3', icon: require('@/assets/images/icons/documentacao.png'), text: 'Documentação', path: '' },
+        { id: '4', icon: require('@/assets/images/icons/contrato.png'), text: 'Contratos', path: '' },
+        { id: '5', icon: require('@/assets/images/icons/fgts.png'), text: 'FGTS', path: '' },
+        { id: '6', icon: require('@/assets/images/icons/folhas.png'), text: 'Folhas', path: '' },
+        { id: '7', icon: require('@/assets/images/icons/simples nacional.png'), text: 'Simples nacional', path: '' },
+        { id: '8', icon: require('@/assets/images/icons/icms.png'), text: 'ICMS', path: '' },
+        { id: '8', icon: require('@/assets/images/icons/pis cofins.png'), text: 'PIS/COFINS', path: '' },
+        { id: '9', icon: require('@/assets/images/icons/irpj.png'), text: 'IRPJ', path: '' },
+        { id: '10', icon: require('@/assets/images/icons/csll.png'), text: 'CSLL', path: '' },
+        { id: '11', icon: require('@/assets/images/icons/solicitacao.png'), text: 'Solicitações', path: '' },
     ];
 
     return (
@@ -78,6 +78,7 @@ export default function Home() {
                         </Text>
                         <View style={styles.buttonRow}>
                             <Pressable
+                                onPress={() => router.navigate('/(categorias)/(pessoal)')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -87,6 +88,7 @@ export default function Home() {
                                 <Text style={styles.buttonText}>Pessoal</Text>
                             </Pressable>
                             <Pressable
+                             onPress={() => router.navigate('/(ged)')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -96,6 +98,7 @@ export default function Home() {
                                 <Text style={styles.buttonText}>GED</Text>
                             </Pressable>
                             <Pressable
+                             onPress={() => router.navigate('/(categorias)/(fiscal)')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -119,6 +122,7 @@ export default function Home() {
                                         styles.button,
                                         { opacity: pressed ? 0.5 : 1 }
                                     ]}
+                                    onPress= {() => router.navigate(item.path)}
                                 >
                                     <Image source={item.icon} style={styles.buttonIcon} />
                                     <Text style={styles.buttonText}>{item.text}</Text>
