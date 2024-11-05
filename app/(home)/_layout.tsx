@@ -47,6 +47,13 @@ export default function Layout() {
                         headerTitle: () => <Logo />,
                         headerRight: () => <NotificationIcon />,
                         headerTitleAlign: 'center', // Ensure the title is centered
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
                     }}
                 />
             </Drawer>
@@ -111,7 +118,7 @@ const NavigationIcon = () => {
 
     return (
         <TouchableOpacity style={styles.navigationIconContainer} onPress={() => navigation.openDrawer()}>
-            <Ionicons name="menu" size={30} color="black" />
+            <Image source={require('@/assets/images/icons/menu.png')} style={styles.navigationIcon}/>
         </TouchableOpacity>
     );
 };
@@ -132,7 +139,7 @@ const NotificationIcon = () => {
     const styles = sheet();
     return (
         <TouchableOpacity style={styles.notificationIconContainer}>
-            <Ionicons name="notifications" size={30} color="black" />
+            <Image source={require('@/assets/images/icons/notifications.png')} style={styles.navigationIcon}/>
         </TouchableOpacity>
     );
 };
@@ -182,5 +189,9 @@ const sheet = () => {
             fontSize: RFPercentage(2),
             color: 'gray',
         },
+        navigationIcon: {
+            width: RFPercentage(4),
+            aspectRatio: 1.2
+        }
     });
 };
