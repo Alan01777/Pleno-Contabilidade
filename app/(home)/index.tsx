@@ -42,6 +42,13 @@ export default function Home() {
         );
     }
 
+    const abbreviateText = (text: string, maxLength: number) => {
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + '...';
+        }
+        return text;
+    };
+
     const services = [
         { id: '1', icon: require('@/assets/images/icons/certidoes.png'), text: 'Certidões', path: '' },
         { id: '2', icon: require('@/assets/images/icons/faturamentos.png'), text: 'Faturamentos', path: '' },
@@ -64,11 +71,14 @@ export default function Home() {
                     <View style={styles.userCard}>
                         <View style={styles.userInfoContainer}>
                             <Image source={require('@/assets/images/icons/avatar.png')} style={styles.userAvatar} />
-                            <Pressable style={styles.userDetails} onPress={() => console.log('ok')}>
+                            <View style={styles.userDetails}>
                                 <Text style={styles.cardInfo}>{user.nome_fantasia}</Text>
                                 <Text style={styles.cardInfo}>{user.cnpj}</Text>
+                                <Text numberOfLines={1} style={styles.cardInfo}>
+                                    {abbreviateText(user.endereco, 27)}
+                                </Text>
                                 <Text style={styles.cardInfo}>ME</Text>
-                            </Pressable>
+                            </View>
                         </View>
                     </View>
 
@@ -88,7 +98,7 @@ export default function Home() {
                                 <Text style={styles.buttonText}>Pessoal</Text>
                             </Pressable>
                             <Pressable
-                             onPress={() => router.navigate('/(ged)')}
+                                onPress={() => router.navigate('/(ged)')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -98,7 +108,7 @@ export default function Home() {
                                 <Text style={styles.buttonText}>GED</Text>
                             </Pressable>
                             <Pressable
-                             onPress={() => router.navigate('/(categorias)/(fiscal)')}
+                                onPress={() => router.navigate('/(categorias)/(fiscal)')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -122,7 +132,7 @@ export default function Home() {
                                         styles.button,
                                         { opacity: pressed ? 0.5 : 1 }
                                     ]}
-                                    onPress= {() => router.navigate(item.path)}
+                                    onPress={() => router.navigate(item.path)}
                                 >
                                     <Image source={item.icon} style={styles.buttonIcon} />
                                     <Text style={styles.buttonText}>{item.text}</Text>
@@ -167,10 +177,11 @@ const sheet = () => {
             marginRight: RFPercentage(1.5)
         },
         userDetails: {
-            justifyContent: 'center'
+            justifyContent: 'center',
         },
         cardInfo: {
-            fontSize: RFPercentage(2)
+            fontSize: RFPercentage(2),
+            marginBottom: RFPercentage(0.4)
         },
         categoriesContainer: {
             marginTop: RFPercentage(3),

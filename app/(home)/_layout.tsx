@@ -59,10 +59,26 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(perfil)/index" // This is the name of the page and must match the url from root
+                    name="(user)/index" // This is the name of the page and must match the url from root
+                    options={{
+                        drawerLabel: 'Usuário',
+                        title: 'USUÁRIO',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center', // Ensure the title is centered
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(user)/(perfil)/index" // This is the name of the page and must match the url from root
                     options={{
                         drawerLabel: 'Perfil',
-                        title: 'PERFIL',
+                        title: 'MEUS DADOS',
                         headerLeft: () => <GoBackButton />,
                         headerTitleAlign: 'center', // Ensure the title is centered
                         headerStyle: {
@@ -226,7 +242,7 @@ const CustomDrawerContent = (props) => {
             />
             <DrawerItem
                 label="Perfil"
-                onPress={() => props.navigation.navigate('(perfil)/index')}
+                onPress={() => props.navigation.navigate('(user)/index')}
                 icon={() => <Ionicons name="person" size={24} color="black" />}
             />
             <DrawerItem
@@ -310,13 +326,14 @@ const sheet = () => {
         drawerHeader: {
             alignItems: 'center',
             padding: 20,
-            backgroundColor: '#fff',
+            backgroundColor: '#F5F5F5',
         },
         userAvatar: {
-            width: '20%', // Percentage-based width
-            aspectRatio: 1, // Maintain aspect ratio
-            borderRadius: 50, // Make it circular
-            marginBottom: '5%'
+            width: RFPercentage(12), // Adjust the width to a fixed size
+            height: RFPercentage(12), // Adjust the height to a fixed size
+            borderRadius: 50,
+            marginRight: RFPercentage(1.5),
+            resizeMode: 'cover' // Ensure the image covers the area
         },
         userDetails: {
             alignItems: 'center',
@@ -335,7 +352,7 @@ const sheet = () => {
         },
         navigationIcon: {
             width: RFPercentage(4),
-            aspectRatio: 1.2
+            height: RFPercentage(4)
         }
     });
 };
