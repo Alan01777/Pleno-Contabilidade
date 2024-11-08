@@ -446,6 +446,22 @@ export default function Layout() {
                         },
                     }}
                 />
+                <Drawer.Screen
+                    name="(user)/(notificacoes)/notificacoes"
+                    options={{
+                        drawerLabel: 'Notificações',
+                        title: 'NOTIFICAÇÕES',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
             </Drawer>
         </GestureHandlerRootView>
     );
@@ -496,7 +512,7 @@ const CustomDrawerContent = (props) => {
             />
             <DrawerItem
                 label="GED"
-                onPress={() => props.navigation.navigate('(ged)/index')}
+                onPress={() => props.navigation.navigate('(ged)/ged')}
                 icon={() => <Ionicons name="folder" size={24} color="black" />}
             />
             <DrawerItem
@@ -539,7 +555,7 @@ const Logo = () => {
 const NotificationIcon = () => {
     const styles = sheet();
     return (
-        <TouchableOpacity style={styles.notificationIconContainer}>
+        <TouchableOpacity style={styles.notificationIconContainer} onPress={() => router.navigate('/(user)/(notificacoes)/notificacoes')}>
             <Image source={require('@/assets/images/icons/notifications.png')} style={styles.navigationIcon} />
         </TouchableOpacity>
     );
