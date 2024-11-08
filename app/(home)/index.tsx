@@ -50,20 +50,24 @@ export default function Home() {
     };
 
     const services = [
-        { id: '1', icon: require('@/assets/images/icons/certidoes.png'), text: 'Certidões', path: '' },
-        { id: '2', icon: require('@/assets/images/icons/faturamentos.png'), text: 'Faturamentos', path: '' },
-        { id: '3', icon: require('@/assets/images/icons/documentacao.png'), text: 'Documentação', path: '' },
-        { id: '4', icon: require('@/assets/images/icons/contrato.png'), text: 'Contratos', path: '' },
-        { id: '5', icon: require('@/assets/images/icons/fgts.png'), text: 'FGTS', path: '' },
-        { id: '6', icon: require('@/assets/images/icons/folhas.png'), text: 'Folhas', path: '' },
-        { id: '7', icon: require('@/assets/images/icons/simples nacional.png'), text: 'Simples nacional', path: '' },
-        { id: '8', icon: require('@/assets/images/icons/icms.png'), text: 'ICMS', path: '' },
-        { id: '8', icon: require('@/assets/images/icons/pis cofins.png'), text: 'PIS/COFINS', path: '' },
-        { id: '9', icon: require('@/assets/images/icons/irpj.png'), text: 'IRPJ', path: '' },
-        { id: '10', icon: require('@/assets/images/icons/csll.png'), text: 'CSLL', path: '' },
-        { id: '11', icon: require('@/assets/images/icons/solicitacao.png'), text: 'Solicitações', path: '' },
+        { id: '1', icon: require('@/assets/images/icons/balanco.png'), text: 'Balanços', path: '/(home)/(ged)/(contabilidade)/(balancos)/balancos' },
+        { id: '2', icon: require('@/assets/images/icons/certificado.png'), text: 'Certificados', path: '/(home)/(ged)/(contabilidade)/(certificados)/certificados' },
+        { id: '3', icon: require('@/assets/images/icons/certidoes.png'), text: 'Certidões', path: '/(home)/(ged)/(contabilidade)/(certidoes)/certidoes' },
+        { id: '4', icon: require('@/assets/images/icons/csll.png'), text: 'CSLL', path: '/(home)/(ged)/(fiscal)/(csll)/csll' },
+        { id: '5', icon: require('@/assets/images/icons/cofins.png'), text: 'COFINS', path: '/(home)/(ged)/(fiscal)/(cofins)/cofins' },
+        { id: '6', icon: require('@/assets/images/icons/contrato.png'), text: 'Contratos', path: '/(home)/(ged)/(pessoal)/(contratos)/contratos' },
+        { id: '7', icon: require('@/assets/images/icons/documentacao.png'), text: 'Documentação', path: '/(home)/(ged)/(contabilidade)/(documentacao)/documentacao' },
+        { id: '8', icon: require('@/assets/images/icons/faturamentos.png'), text: 'Faturamentos', path: '/(home)/(ged)/(contabilidade)/(certidoes)/certidoes' },
+        { id: '9', icon: require('@/assets/images/icons/fgts.png'), text: 'FGTS', path: '/(home)/(ged)/(pessoal)/(fgts)/fgts' },
+        { id: '10', icon: require('@/assets/images/icons/folhas.png'), text: 'Folhas', path: '/(home)/(ged)/(pessoal)/(folhas)/folhas' },
+        { id: '11', icon: require('@/assets/images/icons/icms.png'), text: 'ICMS', path: '/(home)/(ged)/(fiscal)/(icms)/icms' },
+        { id: '12', icon: require('@/assets/images/icons/irpj.png'), text: 'IRPJ', path: '/(home)/(ged)/(fiscal)/(irpj)/irpj' },
+        { id: '13', icon: require('@/assets/images/icons/nota-fiscal.png'), text: 'Notas Fiscais', path: '/(home)/(ged)/(fiscal)/(notas_fiscais)/notas_fiscais' },
+        { id: '14', icon: require('@/assets/images/icons/pis.png'), text: 'PIS', path: '/(home)/(ged)/(fiscal)/(pis)/pis' },
+        { id: '15', icon: require('@/assets/images/icons/prolabore.png'), text: 'Pro-Labóre', path: '/(home)/(ged)/(pessoal)/(pro-labore)/pro_labore' },
+        { id: '16', icon: require('@/assets/images/icons/simples nacional.png'), text: 'Simples nacional', path: '/(home)/(ged)/(fiscal)/(simples_nacional)/simples_nacional' },
+        { id: '17', icon: require('@/assets/images/icons/solicitacao.png'), text: 'Solicitações', path: '' },
     ];
-
     return (
         <ScrollView>
             <SafeAreaProvider style={{ flex: 1, padding: 10, marginTop: RFPercentage(3) }}>
@@ -88,7 +92,7 @@ export default function Home() {
                         </Text>
                         <View style={styles.buttonRow}>
                             <Pressable
-                                onPress={() => router.navigate('/(categorias)/(pessoal)')}
+                                onPress={() => router.navigate('/(ged)/(pessoal)/pessoal')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -98,7 +102,7 @@ export default function Home() {
                                 <Text style={styles.buttonText}>Pessoal</Text>
                             </Pressable>
                             <Pressable
-                                onPress={() => router.navigate('/(ged)')}
+                                onPress={() => router.navigate('/(ged)/ged')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }
@@ -108,7 +112,7 @@ export default function Home() {
                                 <Text style={styles.buttonText}>GED</Text>
                             </Pressable>
                             <Pressable
-                                onPress={() => router.navigate('/(categorias)/(fiscal)')}
+                                onPress={() => router.navigate('/(ged)/(fiscal)/fiscal')}
                                 style={({ pressed }) => [
                                     styles.button,
                                     { opacity: pressed ? 0.5 : 1 }

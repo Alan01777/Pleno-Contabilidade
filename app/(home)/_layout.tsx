@@ -107,7 +107,7 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(ged)/index" // This is the name of the page and must match the url from root
+                    name="(ged)/ged" // This is the name of the page and must match the url from root
                     options={{
                         drawerLabel: 'Ged',
                         title: 'GED',
@@ -155,7 +155,7 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(categorias)/(fiscal)/index" // This is the name of the page and must match the url from root
+                    name="(ged)/(fiscal)/fiscal" // This is the name of the page and must match the url from root
                     options={{
                         drawerLabel: 'Fiscal',
                         title: 'FISCAL',
@@ -171,10 +171,10 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(categorias)/(pessoal)/index" // This is the name of the page and must match the url from root
+                    name="(ged)/(contabilidade)/contabilidade" // This is the name of the page and must match the url from root
                     options={{
-                        drawerLabel: 'Pessoal',
-                        title: 'PESSOAL',
+                        drawerLabel: 'Contabilidade',
+                        title: 'CONTABILIDADE',
                         headerLeft: () => <GoBackButton />,
                         headerTitleAlign: 'center', // Ensure the title is centered
                         headerStyle: {
@@ -187,12 +187,256 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(categorias)/(geral)/index" // This is the name of the page and must match the url from root
+                    name="(ged)/(fiscal)/(cofins)/cofins"
                     options={{
-                        drawerLabel: 'Geral',
-                        title: 'GERAL',
+                        drawerLabel: 'Cofins',
+                        title: 'COFINS',
                         headerLeft: () => <GoBackButton />,
-                        headerTitleAlign: 'center', // Ensure the title is centered
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(csll)/csll"
+                    options={{
+                        drawerLabel: 'CSLL',
+                        title: 'CSLL',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(icms)/icms"
+                    options={{
+                        drawerLabel: 'ICMS',
+                        title: 'ICMS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(irpj)/irpj"
+                    options={{
+                        drawerLabel: 'IRPJ',
+                        title: 'IRPJ',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(notas_fiscais)/notas"
+                    options={{
+                        drawerLabel: 'Notas Fiscais',
+                        title: 'NOTAS FISCAIS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(pis)/pis"
+                    options={{
+                        drawerLabel: 'PIS',
+                        title: 'PIS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(simples_nacional)/simples_nacional"
+                    options={{
+                        drawerLabel: 'Simples Nacional',
+                        title: 'SIMPLES NACIONAL',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(simples_nacional)/(das)/das"
+                    options={{
+                        drawerLabel: 'DAS',
+                        title: 'DAS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(fiscal)/(simples_nacional)/(parcelamento)/parcelamento"
+                    options={{
+                        drawerLabel: 'Parcelamento',
+                        title: 'PARCELAMENTO',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(contabilidade)/(balancos)/balancos"
+                    options={{
+                        drawerLabel: 'Balanços',
+                        title: 'BALANÇOS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+
+                <Drawer.Screen
+                    name="(ged)/(contabilidade)/(certidoes)/certidoes"
+                    options={{
+                        drawerLabel: 'Certidões',
+                        title: 'CERTIDÕES',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+
+                <Drawer.Screen
+                    name="(ged)/(contabilidade)/(certificados)/certificados"
+                    options={{
+                        drawerLabel: 'Certificados',
+                        title: 'CERTIFICADOS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(pessoal)/(fgts)/fgts"
+                    options={{
+                        drawerLabel: 'FGTS',
+                        title: 'FGTS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+
+                <Drawer.Screen
+                    name="(ged)/(pessoal)/(folhas)/folhas"
+                    options={{
+                        drawerLabel: 'Folhas',
+                        title: 'FOLHAS',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+
+                <Drawer.Screen
+                    name="(ged)/(pessoal)/pessoal"
+                    options={{
+                        drawerLabel: 'Pessoal',
+                        title: 'PESSOAL',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
+                        headerStyle: {
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.25,
+                            shadowRadius: 3.84,
+                            elevation: 10,
+                        },
+                    }}
+                />
+                <Drawer.Screen
+                    name="(ged)/(pessoal)/(pro-labore)/pro_labore"
+                    options={{
+                        drawerLabel: 'Pro Labore',
+                        title: 'PRO LABORE',
+                        headerLeft: () => <GoBackButton />,
+                        headerTitleAlign: 'center',
                         headerStyle: {
                             shadowColor: '#000',
                             shadowOffset: { width: 0, height: 2 },
