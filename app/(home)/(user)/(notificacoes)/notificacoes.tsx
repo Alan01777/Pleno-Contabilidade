@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { RFPercentage } from 'react-native-responsive-fontsize';
+
 import { Ionicons } from '@expo/vector-icons'; // Ou qualquer outra biblioteca de ícones
 
 // Dados de exemplo das notificações
@@ -35,6 +37,7 @@ const NotificationsScreen = () => {
 };
 
 // Estilos
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -43,51 +46,51 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 16,
+        padding: RFPercentage(2),
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
     },
     backButton: {
-        marginRight: 8,
+        marginRight: RFPercentage(1),
     },
     headerTitle: {
-        fontSize: 18,
+        fontSize: RFPercentage(2.5),
         fontWeight: 'bold',
     },
     listContent: {
-        padding: 16,
+        padding: RFPercentage(2),
     },
     notificationCard: {
         backgroundColor: '#00008B',
-        borderRadius: 10,
-        padding: 16,
-        marginBottom: 16,
+        borderRadius: RFPercentage(1.5),
+        padding: RFPercentage(2),
+        marginBottom: RFPercentage(2),
         position: 'relative',
     },
     notificationText: {
         color: '#fff',
-        fontSize: 16,
-        lineHeight: 22,
+        fontSize: RFPercentage(2),
+        lineHeight: RFPercentage(2.75),
     },
     notificationFooter: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 12,
+        marginTop: RFPercentage(1.5),
     },
     notificationDate: {
         color: '#000',
-        fontSize: 14,
+        fontSize: RFPercentage(1.75),
         backgroundColor: '#fff',
-        paddingHorizontal: 8,
-        paddingVertical: 2,
-        borderRadius: 5,
+        paddingHorizontal: RFPercentage(1),
+        paddingVertical: RFPercentage(0.25),
+        borderRadius: RFPercentage(0.75),
     },
     notificationDot: {
-        width: 10,
-        height: 10,
+        width: RFPercentage(1.25),
+        height: RFPercentage(1.25),
         backgroundColor: 'red',
-        borderRadius: 5,
+        borderRadius: RFPercentage(0.75),
     },
 });
 
