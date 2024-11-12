@@ -123,7 +123,7 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(calendario)/index" // This is the name of the page and must match the url from root
+                    name="(calendario)/calendario" // This is the name of the page and must match the url from root
                     options={{
                         drawerLabel: 'Calendario',
                         title: 'CALENDÁRIO',
@@ -517,7 +517,7 @@ const CustomDrawerContent = (props) => {
             />
             <DrawerItem
                 label="calendário"
-                onPress={() => props.navigation.navigate('(calendario)/index')}
+                onPress={() => props.navigation.navigate('(calendario)/calendario')}
                 icon={() => <Ionicons name="calendar" size={24} color="black" />}
             />
             <DrawerItem
