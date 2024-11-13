@@ -74,9 +74,6 @@ export default function perfil() {
                 },
                 body: JSON.stringify(form),
             });
-            console.log(`Token: ${token}`);
-            console.log(`API: ${apiUrl}`);
-            console.log(`Form: ${JSON.stringify(form)}`);
 
             if (response.ok) {
                 Alert.alert('Success', 'Data updated successfully!');

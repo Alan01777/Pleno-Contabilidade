@@ -24,9 +24,6 @@ const cofins = () => {
             const token = await SecureStore.getItemAsync('token');
             const userDataJson = await SecureStore.getItemAsync('user_data');
 
-            console.log('Token:', token);
-            console.log('User Data:', userDataJson);
-
             if (!token || !userDataJson) {
                 throw new Error('Token or user data not found');
             }

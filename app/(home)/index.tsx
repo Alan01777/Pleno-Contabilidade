@@ -36,7 +36,6 @@ export default function Home() {
 
                 // Store user data in SecureStore
                 await SecureStore.setItemAsync('user_data', JSON.stringify(userData));
-                console.log('User data stored successfully');
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }
