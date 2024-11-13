@@ -68,7 +68,7 @@ const das = () => {
             />
         }
         >
-            <SafeAreaProvider style={{ flex: 1, padding: 10, marginTop: RFPercentage(3) }}>
+            <SafeAreaProvider style={{ flex: 1, padding: RFPercentage(1), marginTop: RFPercentage(3) }}>
                 <SafeAreaView>
 
                     <View style={styles.container}>
@@ -101,8 +101,8 @@ const sheet = () => {
     const itemWidth = (width - 40) / 3;
     return StyleSheet.create({
         container: {
-            padding: 10,
-            paddingBottom: 25,
+            padding: RFPercentage(1),
+            paddingBottom: RFPercentage(2.5),
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',
@@ -122,7 +122,7 @@ const sheet = () => {
             flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-            padding: 10,
+            padding: RFPercentage(1),
         },
         gridItem: {
             width: '48%',

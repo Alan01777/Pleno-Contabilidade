@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList, Image, Linking, SafeAreaView } from 'react-native';
+import { RFPercentage } from 'react-native-responsive-fontsize';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 const supportNumber = process.env.EXPO_PUBLIC_SUPPORT_NUMBER;
@@ -16,80 +18,90 @@ const supportContacts = [
 const SupportScreen = () => {
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={supportContacts}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.card}>
-            <View style={styles.cardContent}>
-              <Image source={require('@/assets/images/icons/whatsapp.png')} style={styles.icon} />
-              <View style={styles.textContainer}>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.hours}>{item.hours}</Text>
+    <SafeAreaProvider style={{ flex: 1, padding: RFPercentage(1), marginTop: RFPercentage(3) }}>
+      <SafeAreaView>
+        <View style={styles.container}>
+          <FlatList
+            data={supportContacts}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <View style={styles.card}>
+                <View style={styles.cardContent}>
+                  <Image source={require('@/assets/images/icons/whatsapp.png')} style={styles.icon} />
+                  <View style={styles.textContainer}>
+                    <Text style={styles.title}>{item.title}</Text>
+                    <Text style={styles.hours}>{item.hours}</Text>
+                  </View>
+                  <TouchableOpacity style={styles.button} onPress={() => Linking.openURL(`https://wa.me/${item.number}`)}>
+                    <Text style={styles.buttonText}>Conversar</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
-              <TouchableOpacity style={styles.button} onPress={() =>Linking.openURL(`https://wa.me/${item.number}`)}>
-                <Text style={styles.buttonText}>Conversar</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        )}
-      />
-    </View>
+            )}
+          />
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
+
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f7f7f7',
-    paddingTop: 20,
-    paddingHorizontal: 16,
+    padding: RFPercentage(1),
+    paddingBottom: RFPercentage(2.5),
+    backgroundColor: '#fff',
+    borderRadius: RFPercentage(1.25),
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: RFPercentage(0.25) },
+    shadowOpacity: 0.25,
+    shadowRadius: RFPercentage(0.48),
+    elevation: 5,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start', // Align items to the start
   },
   card: {
     backgroundColor: '#ffffff',
-    borderRadius: 12,
-    padding: 16,
-    marginVertical: 8,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 5 },
-    shadowRadius: 10,
-    elevation: 5,
+    borderRadius: RFPercentage(1.5),
+    padding: RFPercentage(2),
+    marginVertical: RFPercentage(1),
   },
   cardContent: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   icon: {
-    width: 40,
-    height: 40,
-    marginRight: 12,
+    width: RFPercentage(5),
+    height: RFPercentage(5),
+    marginRight: RFPercentage(1.5),
   },
   textContainer: {
     flex: 1,
   },
   title: {
-    fontSize: 16,
+    fontSize: RFPercentage(2),
     fontWeight: '600',
     color: '#333',
-    marginBottom: 4,
+    marginBottom: RFPercentage(0.5),
   },
   hours: {
-    fontSize: 14,
+    fontSize: RFPercentage(1.75),
     color: '#555',
   },
   button: {
     backgroundColor: '#007AFF',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 8,
+    paddingVertical: RFPercentage(1),
+    paddingHorizontal: RFPercentage(2),
+    borderRadius: RFPercentage(1),
   },
   buttonText: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: RFPercentage(1.75),
     fontWeight: '600',
   },
 });
+
+export default styles;
 
 export default SupportScreen;

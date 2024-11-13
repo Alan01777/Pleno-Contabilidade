@@ -137,7 +137,7 @@ export default function perfil() {
 
     return (
         <ScrollView>
-            <SafeAreaProvider style={{ flex: 1, padding: 10, marginTop: RFPercentage(3) }}>
+            <SafeAreaProvider style={{ flex: 1, padding: RFPercentage(1), marginTop: RFPercentage(3) }}>
                 <SafeAreaView>
                     <View style={styles.userCard}>
                         <View style={styles.userInfoContainer}>
@@ -181,8 +181,8 @@ const sheet = () => {
     const { height } = useWindowDimensions();
     return StyleSheet.create({
         userCard: {
-            padding: 10,
-            paddingBottom: 25, // Add padding to the bottom
+            padding: RFPercentage(1),
+            paddingBottom: RFPercentage(2.5), // Add padding to the bottom
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',

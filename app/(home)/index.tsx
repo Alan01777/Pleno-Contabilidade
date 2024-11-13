@@ -81,7 +81,7 @@ export default function Home() {
     ];
     return (
         <ScrollView>
-            <SafeAreaProvider style={{ flex: 1, padding: 10, marginTop: RFPercentage(3) }}>
+            <SafeAreaProvider style={{ flex: 1, padding: RFPercentage(1), marginTop: RFPercentage(3) }}>
                 <SafeAreaView>
                     <View style={styles.userCard}>
                         <View style={styles.userInfoContainer}>
@@ -171,8 +171,8 @@ const sheet = () => {
     const { height } = useWindowDimensions();
     return StyleSheet.create({
         userCard: {
-            padding: 10,
-            paddingBottom: 25, // Add padding to the bottom
+            padding: RFPercentage(1),
+            paddingBottom: RFPercentage(2.5), // Add padding to the bottom
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',
@@ -200,8 +200,8 @@ const sheet = () => {
         },
         categoriesContainer: {
             marginTop: RFPercentage(3),
-            padding: 10,
-            paddingBottom: 25, // Add padding to the bottom
+            padding: RFPercentage(1),
+            paddingBottom: RFPercentage(2.5), // Add padding to the bottom
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',
@@ -216,19 +216,19 @@ const sheet = () => {
             marginLeft: RFPercentage(1)
         },
         buttonRow: {
-            padding: 10,
+            padding: RFPercentage(1),
             flexDirection: 'row',
             justifyContent: 'space-between',
         },
         button: {
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 10,
+            padding: RFPercentage(1),
             flex: 1,
         },
         buttonIcon: {
-            width: 50,
-            height: 50,
+            width: RFPercentage(7),
+            height: RFPercentage(7),
             marginBottom: 5,
         },
         buttonText: {
@@ -238,8 +238,8 @@ const sheet = () => {
         },
         allServicesContainer: {
             marginTop: RFPercentage(3),
-            padding: 10,
-            paddingBottom: 25, // Add padding to the bottom
+            padding: RFPercentage(1),
+            paddingBottom: RFPercentage(2.5), // Add padding to the bottom
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',

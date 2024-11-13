@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 10,
+        padding: RFPercentage(1),
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
     },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     notificationCard: {
         backgroundColor: '#00008B',
         borderRadius: RFPercentage(1.5),
-        padding: 10,
+        padding: RFPercentage(1),
         marginBottom: RFPercentage(2),
         position: 'relative',
     },

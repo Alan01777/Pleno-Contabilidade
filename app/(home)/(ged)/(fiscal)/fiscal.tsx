@@ -19,7 +19,7 @@ export default function Fiscal() {
 
     return (
         <ScrollView>
-            <SafeAreaProvider style={{ flex: 1, padding: 10, marginTop: RFPercentage(3) }}>
+            <SafeAreaProvider style={{ flex: 1, padding: RFPercentage(1), marginTop: RFPercentage(3) }}>
                 <SafeAreaView>
                     <View style={styles.container}>
                         {menuItems.map((item, index) => (
@@ -40,8 +40,8 @@ const sheet = () => {
 
     return StyleSheet.create({
         container: {
-            padding: 10,
-            paddingBottom: 25,
+            padding: RFPercentage(1),
+            paddingBottom: RFPercentage(2.5),
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',

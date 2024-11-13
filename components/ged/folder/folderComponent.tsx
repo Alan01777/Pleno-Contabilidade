@@ -35,12 +35,12 @@ const FolderComponent: React.FC<FolderComponentProps> = ({ title, path }) => {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 10,
+        margin: RFPercentage(1),
         alignItems: 'center', // Center the content horizontally
     },
     pressable: {
         alignItems: 'center', // Center the content horizontally
-        padding: 10,
+        padding: RFPercentage(1),
         borderRadius: 5,
     },
     pressablePressed: {
@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
     icon: {
         width: RFPercentage(5),
         height: RFPercentage(5),
-        marginBottom: 5, // Add some space between the icon and the title
+        marginBottom: RFPercentage(0.5), // Add some space between the icon and the title
     },
     title: {
-        fontSize: RFPercentage(2.1),
+        fontSize: RFPercentage(1.6),
         color: '#000',
         textAlign: 'center', // Center the text horizontally
     },

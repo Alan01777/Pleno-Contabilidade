@@ -168,7 +168,7 @@ const sheet = () => {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            padding: 10,
+            padding: RFPercentage(1),
             width: '80%',
             alignSelf: 'center',
         },
@@ -188,7 +188,7 @@ const sheet = () => {
             borderWidth: 1,
             width: '100%',
             borderRadius: 10,
-            padding: 10,
+            padding: RFPercentage(1),
             backgroundColor: '#fff',
             marginBottom: RFPercentage(2),
         },
@@ -246,8 +246,8 @@ const sheet = () => {
             backgroundColor: '#333',
         },
         loadingText: {
-            marginTop: 10,
-            fontSize: 20,
+            marginTop: RFPercentage(1),
+            fontSize: RFPercentage(2),
             color: 'white',
         },
     });

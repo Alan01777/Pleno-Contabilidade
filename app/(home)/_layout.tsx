@@ -581,11 +581,11 @@ const sheet = () => {
             resizeMode: 'contain', // Ensure the logo maintains its aspect ratio
         },
         notificationIconContainer: {
-            marginRight: 10,
+            marginRight: RFPercentage(1),
         },
         drawerHeader: {
             alignItems: 'center',
-            padding: 20,
+            padding: RFPercentage(2),
             backgroundColor: '#F5F5F5',
         },
         userAvatar: {
@@ -599,7 +599,7 @@ const sheet = () => {
             alignItems: 'center',
         },
         goBackButtonContainer: {
-            marginLeft: 10,
+            marginLeft: RFPercentage(1),
         },
         userName: {
             fontSize: RFPercentage(2.5),

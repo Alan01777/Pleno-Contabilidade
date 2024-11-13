@@ -105,12 +105,12 @@ const fileComponent: React.FC<PdfProps> = ({ title, path }) => {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 10,
+        margin: RFPercentage(1),
         alignItems: 'center', // Center the content horizontally
     },
     pressable: {
         alignItems: 'center', // Center the content horizontally
-        padding: 10,
+        padding: RFPercentage(1),
         borderRadius: 5,
     },
     pressablePressed: {
