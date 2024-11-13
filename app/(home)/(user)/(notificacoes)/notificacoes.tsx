@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: RFPercentage(2),
+        padding: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
     },
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     listContent: {
-        padding: RFPercentage(2),
+        padding: 10
     },
     notificationCard: {
         backgroundColor: '#00008B',
         borderRadius: RFPercentage(1.5),
-        padding: RFPercentage(2),
+        padding: 10,
         marginBottom: RFPercentage(2),
         position: 'relative',
     },

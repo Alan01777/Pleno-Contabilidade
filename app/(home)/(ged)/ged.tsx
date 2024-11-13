@@ -39,7 +39,7 @@ export default function Ged() {
 
 const sheet = () => {
     const { width } = useWindowDimensions();
-    const itemWidth = (width - 40) / 3;
+    const itemWidth = (width - 40) / 3; // Adjust the width calculation to ensure 3 items per row
 
     return StyleSheet.create({
         container: {
@@ -54,10 +54,10 @@ const sheet = () => {
             elevation: 5,
             flexDirection: 'row',
             flexWrap: 'wrap',
-            justifyContent: 'flex-start', // Align items to the start
+            justifyContent: 'space-between', // Distribute items evenly
         },
         item: {
-            width: itemWidth,
+            width: itemWidth - 10, // Subtract margin to fit 3 items per row
             marginBottom: 10,
         },
     });

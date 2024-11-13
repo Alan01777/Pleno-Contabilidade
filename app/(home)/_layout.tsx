@@ -139,7 +139,7 @@ export default function Layout() {
                     }}
                 />
                 <Drawer.Screen
-                    name="(suporte)/index" // This is the name of the page and must match the url from root
+                    name="(suporte)/suporte" // This is the name of the page and must match the url from root
                     options={{
                         drawerLabel: 'Suporte',
                         title: 'SUPORTE',
@@ -505,11 +505,11 @@ const CustomDrawerContent = (props) => {
                 onPress={() => props.navigation.navigate('(user)/index')}
                 icon={() => <Ionicons name="person" size={24} color="black" />}
             />
-            <DrawerItem
+            {/* <DrawerItem
                 label="Solicitações"
                 onPress={() => props.navigation.navigate('(solicitacoes)/index')}
                 icon={() => <Ionicons name="document-text" size={24} color="black" />}
-            />
+            /> */}
             <DrawerItem
                 label="GED"
                 onPress={() => props.navigation.navigate('(ged)/ged')}
@@ -522,7 +522,7 @@ const CustomDrawerContent = (props) => {
             />
             <DrawerItem
                 label="Suporte"
-                onPress={() => props.navigation.navigate('(suporte)/index')}
+                onPress={() => props.navigation.navigate('(suporte)/suporte')}
                 icon={() => <Ionicons name="headset" size={24} color="black" />}
             />
         </DrawerContentScrollView>

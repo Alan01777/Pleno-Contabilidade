@@ -45,7 +45,7 @@ export default function Index() {
                             await SecureStore.deleteItemAsync(key);
                         }
                     }
-
+                    console.log(token);
                     router.replace('/(home)');
                 } catch (error) {
                     await SecureStore.deleteItemAsync('token');
@@ -67,6 +67,7 @@ export default function Index() {
                 body: JSON.stringify(data)
             });
             const responseData = await response.json();
+            console.log(responseData);
             if (!response.ok) {
                 if (response.status === 401) {
                     throw new Error(responseData.message || 'Incorrect data');

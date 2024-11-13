@@ -13,22 +13,33 @@ export default function Home() {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const token = await SecureStore.getItemAsync('token');
-            const apiUrl = process.env.EXPO_PUBLIC_API_URL;
+            try {
+                const token = await SecureStore.getItemAsync('token');
+                const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
-            SecureStore.getItemAsync('token').then(token => {
-            }).catch(error => {
-                console.error('Error retrieving token:', error);
-            });
-
-            const userResponse = await fetch(`${apiUrl}/api/user`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
+                if (!token) {
+                    throw new Error('Token not found');
                 }
-            });
 
-            const userData = await userResponse.json();
-            setUser(userData);
+                const userResponse = await fetch(`${apiUrl}/api/user`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!userResponse.ok) {
+                    throw new Error(`HTTP error! status: ${userResponse.status}`);
+                }
+
+                const userData = await userResponse.json();
+                setUser(userData);
+
+                // Store user data in SecureStore
+                await SecureStore.setItemAsync('user_data', JSON.stringify(userData));
+                console.log('User data stored successfully');
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
         };
 
         fetchUser();
@@ -66,7 +77,7 @@ export default function Home() {
         { id: '14', icon: require('@/assets/images/icons/pis.png'), text: 'PIS', path: '/(home)/(ged)/(fiscal)/(pis)/pis' },
         { id: '15', icon: require('@/assets/images/icons/prolabore.png'), text: 'Pro-Labóre', path: '/(home)/(ged)/(pessoal)/(pro-labore)/pro_labore' },
         { id: '16', icon: require('@/assets/images/icons/simples nacional.png'), text: 'Simples nacional', path: '/(home)/(ged)/(fiscal)/(simples_nacional)/simples_nacional' },
-        { id: '17', icon: require('@/assets/images/icons/solicitacao.png'), text: 'Solicitações', path: '' },
+        //{ id: '17', icon: require('@/assets/images/icons/solicitacao.png'), text: 'Solicitações', path: '' },
     ];
     return (
         <ScrollView>
