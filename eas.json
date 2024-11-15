@@ -1,0 +1,28 @@
+{
+  "cli": {
+    "version": ">= 13.2.3",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://alan01777.tech",
+        "EXPO_PUBLIC_SUPPORT_NUMBER": "+5599984503077",
+        "EXPO_PUBLIC_FISCAL_NUMBER": "+5599984503077",
+        "EXPO_PUBLIC_FISCALNUMBER": "+5599984503077"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

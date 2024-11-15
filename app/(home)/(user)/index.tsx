@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Image, View, Text, ActivityIndicator, Pressable, useWindowDimensions, StyleSheet, ScrollView } from 'react-native';
+import { Image, View, Text, ActivityIndicator, Pressable, useWindowDimensions, StyleSheet, ScrollView, Alert } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 
 export default function User() {
     const [user, setUser] = useState<any | undefined>(undefined);
@@ -32,6 +33,20 @@ export default function User() {
 
         fetchUser();
     }, []);
+
+    const handleLogout = async () => {
+        try {
+            router.replace('/');
+            await SecureStore.deleteItemAsync('token');
+        } catch (error) {
+            Alert.alert(
+                "Error",
+                "Failed to log out. Please try again.",
+                [{ text: "OK" }],
+                { cancelable: false }
+            );
+        }
+    };
 
     if (!user) {
         return (
@@ -67,16 +82,23 @@ export default function User() {
                     </View>
 
                     <View>
-                        <Pressable style={styles.navigationButton}>
+                        <Pressable style={styles.navigationButton} onPress={() => router.navigate('/(home)/(user)/(perfil)')}>
                             <Text style={styles.label}>MEUS DADOS</Text>
                             <Ionicons name='person' size={40} color='black' />
                         </Pressable>
                     </View>
 
                     <View>
-                        <Pressable style={styles.navigationButton}>
+                        <Pressable style={styles.navigationButton} onPress={() => router.navigate('/(home)/(user)/(notificacoes)/notificacoes')}>
                             <Text style={styles.label}>NOTIFICAÇÕES</Text>
                             <Image source={require('@/assets/images/icons/notifications.png')} style={styles.navigationIcon} />
+                        </Pressable>
+                    </View>
+
+                    <View>
+                        <Pressable style={styles.navigationButton} onPress={(handleLogout)}>
+                            <Text style={styles.label}>LOGOUT</Text>
+                            <Ionicons name='log-out' size={40} color='black' />
                         </Pressable>
                     </View>
                 </SafeAreaView>
@@ -90,7 +112,7 @@ const sheet = () => {
     return StyleSheet.create({
         userCard: {
             padding: RFPercentage(1),
-            paddingBottom: RFPercentage(2.5), // Add padding to the bottom
+            paddingBottom: RFPercentage(2.5),
             backgroundColor: '#fff',
             borderRadius: 10,
             shadowColor: '#000',
@@ -125,6 +147,22 @@ const sheet = () => {
             paddingBottom: RFPercentage(3),
             marginTop: RFPercentage(3),
             backgroundColor: '#fff',
+            borderRadius: 10,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+        },
+        logoutButton: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: RFPercentage(1),
+            paddingTop: RFPercentage(3),
+            paddingBottom: RFPercentage(3),
+            marginTop: RFPercentage(3),
+            backgroundColor: '#fff', // Red color for logout button
             borderRadius: 10,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },

@@ -1,31 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
-import { Ionicons } from '@expo/vector-icons'; // Ou qualquer outra biblioteca de ícones
-
-// Dados de exemplo das notificações
-const notifications = [
-    { id: '1', message: 'Dia 20 está chegando! Fique de olho no DAS e não se esqueça de realizar o pagamento caso esteja disponível!', date: '18/11' },
-    { id: '2', message: 'Dia 20 está chegando! Fique de olho no DAS e não se esqueça de realizar o pagamento caso esteja disponível!', date: '18/10' },
-    { id: '3', message: 'Dia 20 está chegando! Fique de olho no DAS e não se esqueça de realizar o pagamento caso esteja disponível!', date: '18/09' },
-];
-
 const NotificationsScreen = () => {
-    // Renderiza cada item de notificação
+    const [clickedNotifications, setClickedNotifications] = useState(new Set());
+
+    const notifications = [
+        { id: '1', message: 'DAS SIMPLES NACIONAL - Não se esqueça da data de vencimento do seu DAS!', date: '10/24' },
+        { id: '2', message: 'DAS SIMPLES NACIONAL - Não se esqueça da data de vencimento do seu DAS!', date: '11/24' },
+        { id: '3', message: 'DAS SIMPLES NACIONAL - Não se esqueça da data de vencimento do seu DAS!', date: '12/24' },
+    ];
+
+    const handleNotificationClick = (id) => {
+        setClickedNotifications((prev) => new Set(prev).add(id));
+    };
+
     const renderItem = ({ item }) => (
-        <View style={styles.notificationCard}>
-            <Text style={styles.notificationText}>{item.message}</Text>
-            <View style={styles.notificationFooter}>
-                <Text style={styles.notificationDate}>{item.date}</Text>
-                <View style={styles.notificationDot} />
+        <TouchableOpacity onPress={() => handleNotificationClick(item.id)}>
+            <View style={styles.notificationCard}>
+                <Text style={styles.notificationText}>{item.message}</Text>
+                <View style={styles.notificationFooter}>
+                    <Text style={styles.notificationDate}>{item.date}</Text>
+                    {!clickedNotifications.has(item.id) && <View style={styles.notificationDot} />}
+                </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 
     return (
         <View style={styles.container}>
-            {/* Lista de notificações */}
             <FlatList
                 data={notifications}
                 renderItem={renderItem}
@@ -35,8 +38,6 @@ const NotificationsScreen = () => {
         </View>
     );
 };
-
-// Estilos
 
 const styles = StyleSheet.create({
     container: {

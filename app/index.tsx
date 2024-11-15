@@ -125,9 +125,9 @@ export default function Index() {
                                 style={styles.icon}
                             />
                         </View>
-                        <View style={styles.forgotPasswordContainer}>
+                        <Pressable style={styles.forgotPasswordContainer} onPress={() => Linking.openURL(`https://wa.me/${supportNumber}`)}>
                             <Text style={styles.forgotPasswordText}>Esqueceu sua senha?</Text>
-                        </View>
+                        </Pressable>
                         <Pressable
                             style={[styles.loginButton, loginPressed && styles.loginPressed]}
                             onPressIn={() => setLoginPressed(true)}
